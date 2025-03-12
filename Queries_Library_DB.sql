@@ -76,7 +76,7 @@ ORDER BY Reader
 
 
 --9. Display the most popular author among students and the number of books by that author borrowed from the library.
-SELECT TOP 1 S_Cards.Id_Book, Authors.FirstName + ' ' + Authors.LastName AS Author, COUNT(*) AS Count
+SELECT TOP 1 S_Cards.Id_Book, Authors.FirstName + ' ' + Authors.LastName AS Author, COUNT(S_Cards.Id_Book) AS Count
 FROM S_Cards
 JOIN Books ON S_Cards.Id_Book=Books.Id
 JOIN Authors ON Books.Id_Author=Authors.Id
